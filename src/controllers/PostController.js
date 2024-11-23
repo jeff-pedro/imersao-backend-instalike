@@ -9,15 +9,25 @@ export async function listarPosts(req, res) {
 }
 
 export async function criarPosts(req, res) {
-    const post = await criaPost(req.body);
-    res.status(201).json(post);
+    try {
+        const post = await criaPost(req.body);
+        res.status(201).json(post);
+    } catch (error) {
+        res.status(422).json({ message: error.message });
+    }
+
 }
 
 export async function atualizarPosts(req, res) {
     const { id } = req.params;
     const novosDados = req.body;
-    await atualizaPosts(id, novosDados);
-    res.status(200).json({ message: "Post atualizado com sucesso!" });
+
+    try {
+        await atualizaPosts(id, novosDados);
+        res.status(200).json({ message: "Post atualizado com sucesso!" });
+    } catch (error) {
+        res.status(422).json({ message: error.message });
+    }
 }
 
 export async function excluirPosts(req, res) {
