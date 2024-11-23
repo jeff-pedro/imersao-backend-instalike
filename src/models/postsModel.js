@@ -1,4 +1,5 @@
 import conectarAoBanco2 from "../config/dbConfig2.js";
+import { ObjectId } from "mongodb";
 
 // Conecta ao banco de dados utilizando a string de conexão fornecida como variável de ambiente.
 // A função conectarAoBanco retorna uma promessa que é resolvida com a conexão ao banco.
@@ -22,5 +23,9 @@ export async function criaPost(dto) {
     alt: dto.alt
   }
 
-  return await colecao.insertOne(post); // Executa a inserção e retorna o resulta como um objeto.
+  return colecao.insertOne(post); // Executa a inserção e retorna o resulta como um objeto.
+}
+
+export async function atualizaPosts(id, dto) {
+  return colecao.updateOne({ _id:  ObjectId.createFromHexString(id) }, { $set: dto });
 }

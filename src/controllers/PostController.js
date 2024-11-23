@@ -1,4 +1,4 @@
-import { getTodosPosts } from "../models/postsModel.js";
+import { atualizaPosts, getTodosPosts } from "../models/postsModel.js";
 import { criaPost } from "../models/postsModel.js";
 
 export async function listarPosts(req, res) {
@@ -11,4 +11,11 @@ export async function listarPosts(req, res) {
 export async function criarPosts(req, res) {
     const post = await criaPost(req.body);
     res.status(201).json(post);
+}
+
+export async function atualizarPosts(req, res) {
+    const { id } = req.params;
+    const novosDados = req.body;
+    await atualizaPosts(id, novosDados);
+    res.status(201).json({ message: "Post atualizado com sucesso!" });
 }
