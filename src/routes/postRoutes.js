@@ -1,5 +1,5 @@
 import express from "express";
-import { atualizarPosts, listarPosts } from "../controllers/PostController.js";
+import { atualizarPosts, excluirPosts, listarPosts } from "../controllers/PostController.js";
 import { criarPosts } from "../controllers/PostController.js";
 
 const routes = (app) => {
@@ -11,6 +11,8 @@ const routes = (app) => {
     app.post("/posts", criarPosts);
     // Rota PUT para atualizar posts.
     app.put("/posts/:id", atualizarPosts);
+    // Rota DELETE para excluir posts.
+    app.delete("/posts/:id", excluirPosts);
 }
 
 export default routes;

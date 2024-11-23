@@ -1,4 +1,4 @@
-import { atualizaPosts, getTodosPosts } from "../models/postsModel.js";
+import { atualizaPosts, excluiPosts, getTodosPosts } from "../models/postsModel.js";
 import { criaPost } from "../models/postsModel.js";
 
 export async function listarPosts(req, res) {
@@ -17,5 +17,11 @@ export async function atualizarPosts(req, res) {
     const { id } = req.params;
     const novosDados = req.body;
     await atualizaPosts(id, novosDados);
-    res.status(201).json({ message: "Post atualizado com sucesso!" });
+    res.status(200).json({ message: "Post atualizado com sucesso!" });
+}
+
+export async function excluirPosts(req, res) {
+    const { id } = req.params;
+    await excluiPosts(id);
+    res.status(200).json({ message: "Post excluído com sucesso!" });    
 }

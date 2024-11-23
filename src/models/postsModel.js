@@ -29,3 +29,7 @@ export async function criaPost(dto) {
 export async function atualizaPosts(id, dto) {
   return colecao.updateOne({ _id:  ObjectId.createFromHexString(id) }, { $set: dto });
 }
+
+export async function excluiPosts(id) {
+  return colecao.deleteOne({ _id: ObjectId.createFromHexString(id) });
+}
