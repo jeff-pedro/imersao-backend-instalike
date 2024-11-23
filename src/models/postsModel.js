@@ -9,7 +9,7 @@ const colecao = db.collection("posts"); // Obtém a coleção "posts" do banco d
 // Função assíncrona que busca todos os posts da coleção "posts" no banco de dados "instabytes".
 // Retorna um array com todos os documentos encontrados.
 export async function getTodosPosts() {
-    return colecao.find().toArray(); // Executa a consulta e retorna os resultados como um array.
+    return colecao.find({ descricao: "Gato panqueca" }).toArray(); // Executa a consulta e retorna os resultados como um array.
 }
 
 // Função assíncrona que insere um novo post na coleção "posts" no banco de dados "instabytes".
