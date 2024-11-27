@@ -10,4 +10,10 @@ export async function getTodosPosts() {
     const db = conexao.db("instabytes"); // Obtém o banco de dados "instabytes" da conexão.
     const colecao = db.collection("posts"); // Obtém a coleção "posts" do banco de dados.
     return colecao.find().toArray(); // Executa a consulta e retorna os resultados como um array.
-  }
+}
+
+export async function criarPost(novoPost) {
+  const db = conexao.db("instabytes");
+  const colecao = db.collection("posts");
+  return colecao.insertOne(novoPost);
+}
