@@ -1,6 +1,6 @@
 import express from "express";
 import multer from "multer";
-import { listarPosts, postarNovoPost, uploadImagem } from "../controllers/PostController.js";
+import { atualizarNovoPost, listarPosts, postarNovoPost, uploadImagem } from "../controllers/PostController.js";
 
 // Obs: configuração necessária em servidores Windows
 const storage = multer.diskStorage({
@@ -31,6 +31,8 @@ const routes = (app) => {
   // Rota POST para upload de imagem.
   // O middleware 'uploads.single("imagem")' configura o upload de um único arquivo chamado 'imagem'.
   app.post("/upload", uploads.single("imagem"), uploadImagem); // (Função definida em PostController.js)
+  
+  app.put("/upload/:id", atualizarNovoPost);
 };
 
 export default routes;
