@@ -1,4 +1,5 @@
 import express from "express";
+import "dotenv/config";
 import routes from "./src/routes/postRoutes.js";
 
 const app = express();

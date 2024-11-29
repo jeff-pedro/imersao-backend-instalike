@@ -1,3 +1,3 @@
-node_modules
-api-key.txt
-.env
+*.parcel-cache
+*/node_modules
+*/.env
