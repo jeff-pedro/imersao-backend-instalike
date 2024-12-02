@@ -4,7 +4,7 @@ import cors from "cors";
 import { atualizarNovoPost, listarPosts, postarNovoPost, uploadImagem } from "../controllers/PostController.js";
 
 const corsOptions = {
-    origin: "http://localhost:8000",
+    origin: "https://instabytes.onrender.com/",
     optionsSuccessStutus: 200 
 }
 
