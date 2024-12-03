@@ -7,7 +7,7 @@ export default async function conectarAoBanco(stringConexao) {
         mongoClient = new MongoClient(stringConexao);
         console.log("Conectando ao cluster do bando de dados...");
         mongoClient.connect();
-        console.log("Conetado ao MongoDB Atlas com sucesso!");
+        console.log("Conectado ao MongoDB Atlas com sucesso!");
         
         return mongoClient;
     } catch (error) {

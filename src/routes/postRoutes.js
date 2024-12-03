@@ -5,7 +5,7 @@ import { atualizarNovoPost, listarPosts, postarNovoPost, uploadImagem } from "..
 
 const corsOptions = {
     origin: "https://instabytes.onrender.com/",
-    optionsSuccessStutus: 200 
+    optionsSuccessStatus: 200 
 }
 
 // Obs: configuração necessária em servidores Windows
