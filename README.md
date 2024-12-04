@@ -3,6 +3,9 @@
 ## Sobre
 API RESTful desenvolvida em Node.js para a plataforma de rede social fictícia **Instabytes**. O projeto utiliza a IA Google Gemini para oferecer funcionalidades avançadas, como geração de legendas personalizadas. A imersão tem como objetivo trazer um aprendizado imersivo em desenvolvimento de software do lado servidor, utilzando como linguagem e plataforma JavaScrip/Node.js, como outros objetivos explorar as possibilidades da IA no desenvolvimento de backends modernos e escaláveis.
 
+##Links
+- [Back-End](https://imersao-dev-backend-instabytes-396738216589.southamerica-east1.run.app/posts/)
+- [Front-End](https://instabytes.onrender.com/)
 
 ## Rotas
 ### `GET /posts`
